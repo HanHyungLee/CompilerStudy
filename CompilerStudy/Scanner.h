@@ -10,6 +10,7 @@
 
 //#include <stdio.h>
 #include <string>
+#include <vector>
 #include "Kind.h"
 
 using std::vector;

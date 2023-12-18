@@ -10,6 +10,7 @@
 //#include <stdio.h>
 #include <string>
 #include <iostream>
+#include <vector>
 #include "Token.h"
 
 struct Token;
