@@ -15,6 +15,8 @@ auto main()->int {
             }
         )"""";
     auto tokenList = scan(sourceCode);
+    auto syntaxTree = parse(tokenList);
+    
     printTokenList(tokenList);
     return 0;
 }

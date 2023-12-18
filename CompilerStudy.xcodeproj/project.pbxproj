@@ -11,6 +11,7 @@
 		AE9BFC422B17649C0039F97C /* Kind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9BFC402B17649C0039F97C /* Kind.cpp */; };
 		AE9BFC452B176A050039F97C /* Sacnner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9BFC442B176A050039F97C /* Sacnner.cpp */; };
 		F1A210D12B3082BC008F30D5 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A210CF2B3082BC008F30D5 /* Node.cpp */; };
+		F1A210D42B308BC2008F30D5 /* Parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A210D22B308BC2008F30D5 /* Parse.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,6 +37,8 @@
 		AE9BFC472B176AD10039F97C /* Scanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
 		F1A210CF2B3082BC008F30D5 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
 		F1A210D02B3082BC008F30D5 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
+		F1A210D22B308BC2008F30D5 /* Parse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parse.cpp; sourceTree = "<group>"; };
+		F1A210D32B308BC2008F30D5 /* Parse.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parse.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,8 @@
 				AE9BFC442B176A050039F97C /* Sacnner.cpp */,
 				F1A210D02B3082BC008F30D5 /* Node.hpp */,
 				F1A210CF2B3082BC008F30D5 /* Node.cpp */,
+				F1A210D32B308BC2008F30D5 /* Parse.hpp */,
+				F1A210D22B308BC2008F30D5 /* Parse.cpp */,
 			);
 			path = CompilerStudy;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			files = (
 				AE9BFC422B17649C0039F97C /* Kind.cpp in Sources */,
 				AE89011D2B1763F300DA75F2 /* main.cpp in Sources */,
+				F1A210D42B308BC2008F30D5 /* Parse.cpp in Sources */,
 				AE9BFC452B176A050039F97C /* Sacnner.cpp in Sources */,
 				F1A210D12B3082BC008F30D5 /* Node.cpp in Sources */,
 			);
