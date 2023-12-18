@@ -53,6 +53,7 @@ struct Token {
 };
 
 auto toKind(string) -> Kind;
+auto toString(Kind type)->string;
 auto printTokenList(vector<Token>) -> void;
 
 

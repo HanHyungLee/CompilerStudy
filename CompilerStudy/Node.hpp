@@ -59,7 +59,7 @@ struct Print: Statement {
     vector<Expression*> arguments;
 };
 
-struct ExpressionnStatement: Statement {
+struct ExpressionStatement: Statement {
     Expression* expression;
 };
 
