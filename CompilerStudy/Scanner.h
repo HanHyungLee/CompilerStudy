@@ -8,12 +8,9 @@
 #ifndef Scanner_h
 #define Scanner_h
 
-//#include <stdio.h>
-#include <string>
 #include <vector>
 #include "Kind.h"
 
-using std::vector;
-using std::cout;
+using namespace std;
 
 #endif /* Scanner_h */

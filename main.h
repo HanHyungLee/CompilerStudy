@@ -7,6 +7,7 @@
 #include "Kind.h"
 #include "Scanner.h"
 #include "Node.hpp"
+#include "Parse.hpp"
 
 using std::vector;
 using std::string;

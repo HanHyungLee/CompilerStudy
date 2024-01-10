@@ -7,17 +7,14 @@
 
 #pragma once
 
-//#include <stdio.h>
-#include <string>
-#include <iostream>
 #include <vector>
+#include <stdio.h>
+#include <string>
 #include "Token.h"
 
 struct Token;
 
-using std::string;
-using std::ostream;
-using std::vector;
+using namespace std;
 
 enum class Kind {
     Unknown, EndOfToken,
@@ -55,5 +52,5 @@ struct Token {
 auto toKind(string) -> Kind;
 auto toString(Kind type)->string;
 auto printTokenList(vector<Token>) -> void;
-
+auto operator<<(ostream& stream, Token& token)->ostream&;
 

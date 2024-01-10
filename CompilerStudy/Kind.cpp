@@ -8,13 +8,14 @@
 #include "Kind.h"
 #include <iomanip>
 #include <map>
+#include <iostream>
 
 //using std::map;
 //using std::setw;
 //using std::left;
 //using std::cout;
 //using std::endl;
-using namespace std;
+//using namespace std;
 
 
 static map<string, Kind> stringToKind = {

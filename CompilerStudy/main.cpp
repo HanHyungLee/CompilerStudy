@@ -5,6 +5,7 @@
 //  Created by Lee Hanhyung on 11/29/23.
 //
 
+#include <iostream>
 #include "main.h"
 
 auto main()->int {
@@ -18,5 +19,6 @@ auto main()->int {
     auto syntaxTree = parse(tokenList);
     
     printTokenList(tokenList);
+    
     return 0;
 }

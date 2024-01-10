@@ -5,6 +5,7 @@
 //  Created by Lee Hanhyung on 11/29/23.
 //
 
+#include <iostream>
 #include "Scanner.h"
 
 static string::iterator current;
