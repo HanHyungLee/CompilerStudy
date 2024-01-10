@@ -18,7 +18,8 @@ auto main()->int {
     auto tokenList = scan(sourceCode);
     auto syntaxTree = parse(tokenList);
     
-    printTokenList(tokenList);
+//    printTokenList(tokenList);    // 3장 구문 분석
+    interpret(syntaxTree);      // 4장 인터프리터
     
     return 0;
 }

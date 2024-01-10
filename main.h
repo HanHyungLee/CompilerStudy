@@ -15,3 +15,4 @@ using std::string;
 auto scan(string)->vector<Token>;
 auto printTokenList(vector<Token>) -> void;
 auto parse(vector<Token>) -> Program*;
+auto interpret(Program*)->void;
