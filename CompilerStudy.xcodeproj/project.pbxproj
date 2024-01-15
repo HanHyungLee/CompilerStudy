@@ -15,6 +15,7 @@
 		F1A0D44A2B4EF34A001D0451 /* DataType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A0D4482B4EF34A001D0451 /* DataType.cpp */; };
 		F1A210D12B3082BC008F30D5 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A210CF2B3082BC008F30D5 /* Node.cpp */; };
 		F1A210D42B308BC2008F30D5 /* Parse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1A210D22B308BC2008F30D5 /* Parse.cpp */; };
+		F1BD64162B55799500272794 /* BuiltinFunctionTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F1BD64152B55799500272794 /* BuiltinFunctionTable.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,7 @@
 		F1A210D02B3082BC008F30D5 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
 		F1A210D22B308BC2008F30D5 /* Parse.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parse.cpp; sourceTree = "<group>"; };
 		F1A210D32B308BC2008F30D5 /* Parse.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parse.hpp; sourceTree = "<group>"; };
+		F1BD64152B55799500272794 /* BuiltinFunctionTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BuiltinFunctionTable.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +93,11 @@
 				F1A210D32B308BC2008F30D5 /* Parse.hpp */,
 				F1A210D22B308BC2008F30D5 /* Parse.cpp */,
 				F19822DF2B4EE1DA00628272 /* Printer.cpp */,
-				F19822E12B4EE7CF00628272 /* Interpreter.cpp */,
 				F19822E22B4EE7CF00628272 /* Interpreter.hpp */,
+				F19822E12B4EE7CF00628272 /* Interpreter.cpp */,
 				F1A0D4492B4EF34A001D0451 /* DataType.hpp */,
 				F1A0D4482B4EF34A001D0451 /* DataType.cpp */,
+				F1BD64152B55799500272794 /* BuiltinFunctionTable.cpp */,
 			);
 			path = CompilerStudy;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				F19822E02B4EE1DA00628272 /* Printer.cpp in Sources */,
 				F19822E32B4EE7CF00628272 /* Interpreter.cpp in Sources */,
 				F1A210D12B3082BC008F30D5 /* Node.cpp in Sources */,
+				F1BD64162B55799500272794 /* BuiltinFunctionTable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
