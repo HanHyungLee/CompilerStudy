@@ -39,6 +39,7 @@
 		AE9BFC442B176A050039F97C /* Sacnner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sacnner.cpp; sourceTree = "<group>"; };
 		AE9BFC462B176A220039F97C /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		AE9BFC472B176AD10039F97C /* Scanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		F12C1E2B2B5AB70000C96730 /* Chapter4SourceCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Chapter4SourceCode.h; sourceTree = "<group>"; };
 		F19822DF2B4EE1DA00628272 /* Printer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Printer.cpp; sourceTree = "<group>"; };
 		F19822E12B4EE7CF00628272 /* Interpreter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Interpreter.cpp; sourceTree = "<group>"; };
 		F19822E22B4EE7CF00628272 /* Interpreter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Interpreter.hpp; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		AE89011B2B1763F300DA75F2 /* CompilerStudy */ = {
 			isa = PBXGroup;
 			children = (
+				F12C1E2B2B5AB70000C96730 /* Chapter4SourceCode.h */,
 				AE9BFC3D2B1764680039F97C /* main.h */,
 				AE89011C2B1763F300DA75F2 /* main.cpp */,
 				AE9BFC432B17676F0039F97C /* Kind.h */,

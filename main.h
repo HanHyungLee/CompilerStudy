@@ -8,6 +8,7 @@
 #include "Scanner.h"
 #include "Node.hpp"
 #include "Parse.hpp"
+#include "Chapter4SourceCode.h"
 
 using std::vector;
 using std::string;
