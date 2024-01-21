@@ -24,10 +24,12 @@ struct Program {
 struct Statement {
     virtual auto print(int)->void = 0;
     virtual auto interpret()->void = 0;
+    virtual auto generate()->void = 0;
 };
 struct Expression {
     virtual auto print(int)->void = 0;
     virtual auto interpret()->any = 0;
+    virtual auto generate()->void = 0;
 };
 
 struct Function: Statement {
@@ -36,12 +38,14 @@ struct Function: Statement {
     vector<Statement*> block;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct Return: Statement {
     Expression* expression;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct Variable: Statement {
@@ -49,6 +53,7 @@ struct Variable: Statement {
     Expression* expression;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct For: Statement {
@@ -58,15 +63,18 @@ struct For: Statement {
     vector<Statement*> block;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct Break: Statement {
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 struct Continue: Statement {
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct If: Statement {
@@ -75,6 +83,7 @@ struct If: Statement {
     vector<Statement*> elseBlock;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct Print: Statement {
@@ -82,12 +91,14 @@ struct Print: Statement {
     vector<Expression*> arguments;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct ExpressionStatement: Statement {
     Expression* expression;
     auto print(int)->void;
     auto interpret()->void;
+    auto generate()->void;
 };
 
 struct Or: Expression {
@@ -95,6 +106,7 @@ struct Or: Expression {
     Expression* rhs;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct And: Expression {
@@ -102,6 +114,7 @@ struct And: Expression {
     Expression* rhs;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct Relational: Expression {
@@ -110,6 +123,7 @@ struct Relational: Expression {
     Expression* rhs;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct Arithmetic: Expression {
@@ -118,6 +132,7 @@ struct Arithmetic: Expression {
     Expression* rhs;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct Unary: Expression {
@@ -125,6 +140,7 @@ struct Unary: Expression {
     Expression* sub;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct Call: Expression {
@@ -132,6 +148,7 @@ struct Call: Expression {
     vector<Expression*> arguments;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct GetElement: Expression {
@@ -139,6 +156,7 @@ struct GetElement: Expression {
     Expression* index;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct SetElement: Expression {
@@ -147,12 +165,14 @@ struct SetElement: Expression {
     Expression* value;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct GetVariable: Expression {
     string name;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct SetVariable: Expression {
@@ -160,38 +180,45 @@ struct SetVariable: Expression {
     Expression* value;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct NullLiteral: Expression {
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 struct BooleanLiteral: Expression {
     bool value = false;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 struct NumberLiteral: Expression {
     double value = 0.0;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 struct StringLiteral: Expression {
     string value;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct ArrayLiteral: Expression {
     vector<Expression*> values;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 struct MapLiteral: Expression {
     map<string, Expression*> values;
     auto print(int)->void;
     auto interpret()->any;
+    auto generate()->void;
 };
 
 #endif /* Node_hpp */
