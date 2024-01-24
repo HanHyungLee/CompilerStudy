@@ -13,6 +13,8 @@ static vector<Code> codeList;
 // 함수의 이름과 주소를 키와 값으로 보관
 static map<string, size_t> functionTable;
 
+// 리스트는 이중 연결 리스트로 선형 구조를 가지는 시퀀스 컨테이너이며 노드 기반으로 데이터를 저장한다.
+// 동일한 함수를 여러번 호출할때 이름이 같은 변수들이 서로 다른 값을 가질 수 있도록 하려면 상대 주소를 배정해야 한다.
 // map은 변수의 이름과 오프셋을 키와 값으로 가지고 있고, 리스트는 변수의 유효 범위를 관리한다.
 static list<map<string, size_t>> symbolStack;
 
@@ -120,6 +122,7 @@ auto Return::generate()->void {
 }
 
 // 변수를 심볼 스택의 현재 블럭에 등록한 후 오프셋 스택의 현재 블럭의 값을 1 증가시킨다. 또한 함수의 크기를 저장하는 전역변수 localSize의 값을 기존의 localSize의 값과 오프셋 스택의 현재 블럭 값 중 큰 값으로 설정해 함수를 실행하는데 필요한 공간의 크기를 갱신한다.
+// 오프셋은 단순히 0부터 순차적 증가하는 값.
 auto setLocal(string name)->void {
     symbolStack.front()[name] = offsetStack.back();
     offsetStack.back() += 1;
@@ -135,11 +138,14 @@ auto getLocal(string name)->size_t {
     return SIZE_MAX;
 }
 
-// 변수의 선언. 현재 블럭에 변수의 이름을 등록한다.
+// 변수의 선언
 auto Variable::generate()->void {
+    // 현재 블럭에 변수의 이름을 등록한다.
     setLocal(name);
+    // 초기화식 노드 순회
     expression->generate();
     writeCode(Instruction::SetLocal, getLocal(name));
+    // 스택 비움
     writeCode(Instruction::PopOperand);
 }
 
@@ -190,7 +196,7 @@ auto Continue::generate()->void {
 }
 
 auto If::generate()->void {
-    // if문은 하나의 본문을 실행했다면 if문의 끝으로 점프해야 한다.
+    // if문은 하나의 본문을 실행했다면 if문의 끝으로 점프해야 한다. 목적 코드 작성 중에는 끝 주소를 알 수 없으므로 생성한 점프 명령 코드들을 보관할 리스트를 생성하고, 조건식의 개수만큼 반복
     vector<size_t> jumpList;
     for (auto i = 0; i < conditions.size(); i++) {
         // 조건식의 결과가 참이 아니라면 다음 조건식의 주소로 점프
@@ -221,7 +227,7 @@ auto If::generate()->void {
 // 식의 결과값
 auto ExpressionStatement::generate()->void {
     expression->generate();
-    // 피연산자 스택에서 값을 꺼내 버린다.
+    // 피연산자 스택에서 값을 비운다.
     writeCode(Instruction::PopOperand);
 }
 
@@ -279,6 +285,7 @@ auto Unary::generate()->void {
     
 }
 
+// 함수 호출
 auto Call::generate()->void {
     // 인자값들의 순서를 유지하기 위해 역순으로 인자 식 노드들을 순회한다.
     for (auto i = arguments.size(); i > 0; i--)

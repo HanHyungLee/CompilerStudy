@@ -31,7 +31,7 @@
     2 Exit
     3 PushString     "Hello, World!"    -> 주소 3의 PushString 으로 "Hello, World!" 문자열을 넣는다.
     4 Print          [1]                -> 주소 4의 Print [1] 코드는 피연산자 스택에서 "Hello, World!"를 꺼내 콘솔에 출력한다.
-    5 Return                            -> 주소 5의 Return 코드는 함수를 호추루한 코드의 바로 다음 코드로 점프하고, 주소 2의 Exit 코드로 프로그램을 종료한다.
+    5 Return                            -> 주소 5의 Return 코드는 함수를 호출한 코드의 바로 다음 코드로 점프하고, 주소 2의 Exit 코드로 프로그램을 종료한다.
  
  [ 피연산자 스택 ]
  1. [3]
@@ -71,7 +71,7 @@
  [ 피연산자 스택 ]
  1. [1]
  2. [1, 2]
- 3. [2,]
+ 3. [2]
  4. [2, 3]
  5. [2, 3, 4]
  6. [2, 12]
@@ -86,6 +86,22 @@
 
 /*
  출력 결과 5-6, 5-7
+ 
+ FUNCTION   ADDRESS
+ ------------------
+ main       3
+
+ ADDR INSTRUCTION    OPERAND
+ ------------------------------------
+    0 GetGlobal      "main"
+    1 Call           [0]
+    2 Exit
+    3 Alloca         [0]
+    4 PushNumber     1
+    5 PushNumber     2
+    6 Add
+    7 PopOperand                -> 피연산자 스택에 남은 값을 비운다.
+    8 Return
  */
 //string sourceCode = R""""(
 //        function main() {
@@ -106,7 +122,7 @@
     1 Call           [0]
     2 Exit
     3 PushBoolean    false
-    4 LogicalOr      [8]    -> 주소 4의 LogicalOr [8] 코드가 피연산자 스택에 있는 값이 참이면 주소 8로 점프하고 아니라면 값을 꺼내 버린다.
+    4 LogicalOr      [8]    -> 주소 4의 LogicalOr [8] 코드가 피연산자 스택에 있는 값이 참이면 주소 8로 점프하고 아니라면 값을 비운다.
     5 PushNumber     1
     6 PushNumber     2
     7 Add
@@ -119,7 +135,9 @@
  3. [1]
  4. [1, 2]
  5. [3]
- 6. [true]
+ 
+ 왼쪽이 true인 경우
+ 1. [true]
  */
 //string sourceCode = R""""(
 //        function main() {
@@ -142,18 +160,20 @@
     3 Alloca         [2]        -> Alloca [2] 코드는 함수를 실행하기 위해 필요한 메모리 공간을 2만큼 할당한다.
     4 PushString     "first"
     5 SetLocal       [0]        -> 주소 5의 SetLocal[0] 코드는 피연산자 스택의 값을 함수 공간의 첫 번째에 저장한다.
-    6 PopOperand                -> 주소 6의 PopOperand 코드는 피연산자 스택의 값을 꺼내어 버린다.
+    6 PopOperand                -> 주소 6의 PopOperand 코드는 피연산자 스택의 값을 비운다.
     7 PushString     "second"
     8 SetLocal       [1]
     9 PopOperand
    10 Return
  
  [ 피연산자 스택 ] | [ 함수 공간 ]
- 1. [,] | [,]
- 2. ["first",] | [,]
- 3. ["first",] | ["first",]
- 4. [,] | ["first",]
- 5. [,] | ["first", "second"]
+ 1. [] | [,]
+ 2. ["first"] | [,]
+ 3. ["first"] | ["first",]
+ 4. [] | ["first",]
+ 5. ["second"] | ["first",]
+ 6. ["second"] | ["first", "second"]
+ 7. [] | ["first", "second"]
  */
 //string sourceCode = R""""(
 //        function main() {
@@ -374,22 +394,22 @@
    15 Return                -> 8번 주소로 점프
  
  [ 피연산자 스택 ] | [ 함수 공간 ]
- 1. [4, 3] | [,]
+ 1. [4, 3] | []
  2. [4, 3, 10] | [,]
- 3. [,] | [3, 4]
+ 3. [] | [3, 4]
  4. [3, 4] | [3, 4]
- 5. [7,] | [3, 4]
+ 5. [7] | [3, 4]
  6. [7] | []
  */
-string sourceCode = R""""(
-        function main() {
-            print add(3, 4);
-        }
-
-        function add(a, b) {
-            a + b;
-        }
-    )"""";
+//string sourceCode = R""""(
+//        function main() {
+//            print add(3, 4);
+//        }
+//
+//        function add(a, b) {
+//            a + b;
+//        }
+//    )"""";
 
 /*
  출력 결과 5-16
@@ -418,6 +438,7 @@ string sourceCode = R""""(
  2. ["element", 5]
  3. ["element", 5, 1]
  4. [[1, 5, "elemennt"]]
+ 5. []
  */
 //string sourceCode = R""""(
 //        function main() {
@@ -450,6 +471,7 @@ string sourceCode = R""""(
  1. [[1,2]]
  2. [[1,2], 0]
  3. [1]
+ 4. []
  */
 //string sourceCode = R""""(
 //        function main() {
@@ -488,6 +510,7 @@ string sourceCode = R""""(
  3. ["element", [1, 2]] | [[1, 2]]
  4. ["element", [1, 2], 0] | [[1, 2]]
  5. ["element"] | [["element", 2]]
+ 6. [] | [["element", 2]]
  */
 //string sourceCode = R""""(
 //        function main() {
