@@ -94,6 +94,9 @@ auto parseBlock()->vector<Statement*> {
             case Kind::PrintLine:
                 result.push_back(parsePrint());
                 break;
+            case Kind::Return:
+                result.push_back(parseReturn());
+                break;
             case Kind::Break:
                 result.push_back(parseBreak());
                 break;
