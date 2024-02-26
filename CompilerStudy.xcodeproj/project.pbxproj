@@ -10,6 +10,7 @@
 		AE89011D2B1763F300DA75F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE89011C2B1763F300DA75F2 /* main.cpp */; };
 		AE9BFC422B17649C0039F97C /* Kind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9BFC402B17649C0039F97C /* Kind.cpp */; };
 		AE9BFC452B176A050039F97C /* Sacnner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE9BFC442B176A050039F97C /* Sacnner.cpp */; };
+		F12A4B872B8CCB490083AE43 /* Machine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12A4B862B8CCB490083AE43 /* Machine.cpp */; };
 		F12C1E272B5AB3B200C96730 /* Instruction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E252B5AB3B200C96730 /* Instruction.cpp */; };
 		F12C1E2A2B5AB56100C96730 /* Code.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E282B5AB56100C96730 /* Code.cpp */; };
 		F12C1E312B5AB8E900C96730 /* Generator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F12C1E2F2B5AB8E900C96730 /* Generator.cpp */; };
@@ -42,6 +43,7 @@
 		AE9BFC442B176A050039F97C /* Sacnner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sacnner.cpp; sourceTree = "<group>"; };
 		AE9BFC462B176A220039F97C /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		AE9BFC472B176AD10039F97C /* Scanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scanner.h; sourceTree = "<group>"; };
+		F12A4B862B8CCB490083AE43 /* Machine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Machine.cpp; sourceTree = "<group>"; };
 		F12C1E252B5AB3B200C96730 /* Instruction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Instruction.cpp; sourceTree = "<group>"; };
 		F12C1E262B5AB3B200C96730 /* Instruction.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Instruction.hpp; sourceTree = "<group>"; };
 		F12C1E282B5AB56100C96730 /* Code.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Code.cpp; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				F12C1E282B5AB56100C96730 /* Code.cpp */,
 				F12C1E302B5AB8E900C96730 /* Generator.hpp */,
 				F12C1E2F2B5AB8E900C96730 /* Generator.cpp */,
+				F12A4B862B8CCB490083AE43 /* Machine.cpp */,
 			);
 			path = CompilerStudy;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				F19822E32B4EE7CF00628272 /* Interpreter.cpp in Sources */,
 				F12C1E312B5AB8E900C96730 /* Generator.cpp in Sources */,
 				F1A210D12B3082BC008F30D5 /* Node.cpp in Sources */,
+				F12A4B872B8CCB490083AE43 /* Machine.cpp in Sources */,
 				F1BD64162B55799500272794 /* BuiltinFunctionTable.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

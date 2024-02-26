@@ -401,15 +401,15 @@
  5. [7] | [3, 4]
  6. [7] | []
  */
-//string sourceCode = R""""(
-//        function main() {
-//            print add(3, 4);
-//        }
-//
-//        function add(a, b) {
-//            a + b;
-//        }
-//    )"""";
+string sourceCode = R""""(
+        function main() {
+            print add(3, 4);
+        }
+
+        function add(a, b) {
+            return a + b;
+        }
+    )"""";
 
 /*
  출력 결과 5-16
