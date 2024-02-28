@@ -401,15 +401,15 @@
  5. [7] | [3, 4]
  6. [7] | []
  */
-string sourceCode = R""""(
-        function main() {
-            print add(3, 4);
-        }
-
-        function add(a, b) {
-            return a + b;
-        }
-    )"""";
+//string sourceCode = R""""(
+//        function main() {
+//            print add(3, 4);
+//        }
+//
+//        function add(a, b) {
+//            return a + b;
+//        }
+//    )"""";
 
 /*
  출력 결과 5-16
@@ -519,6 +519,27 @@ string sourceCode = R""""(
 //        }
 //    )"""";
 
+// chapter 6. 가상머신
+
+string sourceCode = R""""(
+        function main() {
+            print factorial(3);
+        }
+
+        function factorial(n) {
+            if (n < 2) {
+                return 1;
+            }
+            return n * factorial(n - 1);
+        }
+    )"""";
+
+//string sourceCode = R""""(
+//        function main() {
+//            print 'Hello, World!';
+//        }
+//    )"""";
+
 auto main()->int {
     auto tokenList = scan(sourceCode);
     auto syntaxTree = parse(tokenList);
@@ -526,7 +547,8 @@ auto main()->int {
     
 //    printTokenList(tokenList);    // 3장 구문 분석
 //    interpret(syntaxTree);      // 4장 인터프리터
-    printObjectCode(objectCode);    // 5장 코드 생성
+//    printObjectCode(objectCode);    // 5장 코드 생성
+    execute(objectCode);             // 6장 가상머신
     
     return 0;
 }
